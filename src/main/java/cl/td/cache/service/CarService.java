@@ -31,20 +31,18 @@ public class CarService implements VehicleService{
     }
 
     @Override
+    @CachePut(cacheNames = "car", key = "#newCar.id")
     @CacheEvict(cacheNames = "cars", allEntries = true)
-    public void newCar(Car car) throws InterruptedException {
+    public Car newCar(Car newCar) throws InterruptedException {
         Thread.sleep(5000);
-        carRepository.save(car);
+        return carRepository.save(newCar);
     }
 
     @Override
     @CachePut(cacheNames = "car", key = "#newCar.id")
     @CacheEvict(cacheNames = "cars", allEntries = true)
     public Car update(Car newCar) throws InterruptedException {
-        Car car = this.findOne(newCar.getId());
-        car.setModel(newCar.getModel());
-        car.setManufacturer(newCar.getManufacturer());
         Thread.sleep(5000);
-        return carRepository.save(car);
+        return carRepository.save(newCar);
     }
 }

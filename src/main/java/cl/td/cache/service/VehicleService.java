@@ -9,7 +9,7 @@ public interface VehicleService {
 
     Car findOne(Long id) throws InterruptedException;
 
-    void newCar(Car car) throws InterruptedException;
+    Car newCar(Car car) throws InterruptedException;
 
     Car update(Car car) throws InterruptedException;
 }
