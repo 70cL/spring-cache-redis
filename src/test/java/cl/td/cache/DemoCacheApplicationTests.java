@@ -1,10 +1,10 @@
-package cl.td.demo;
+package cl.td.cache;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class DemoCacheApplicationTests {
 
 	@Test
 	void contextLoads() {
