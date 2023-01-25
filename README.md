@@ -1,6 +1,3 @@
-# Car API To Get Information for Car and manufacturer from database or cache.
-
----
 This project provides to test caching mechanism in Spring with Redis.
 
 ### Tech Stack
