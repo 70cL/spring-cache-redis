@@ -1,6 +1,5 @@
 package cl.td.cache.config;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
@@ -13,8 +12,6 @@ import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
-
-import java.time.Duration;
 
 @EnableCaching
 @Configuration
@@ -44,7 +41,7 @@ public class RedisConfiguration implements CachingConfigurer {
         };
     }
 
-    //add if you want to save as json to redis
+    //add this config If you want to save as json to redis otherwise It will be object serialization
     @Bean
     public CacheManager redisCacheManager() {
         RedisSerializationContext.SerializationPair<Object> jsonSerializer =
